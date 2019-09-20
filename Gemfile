@@ -30,7 +30,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
-gem 'iex', '~> 0.1.0'
+gem 'iex-ruby-client'
 gem 'alphavantagerb', '~> 1.3', '>= 1.3.2'
 gem "stock_quote", '~> 3.0.0'
 
