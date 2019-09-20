@@ -32,7 +32,7 @@ class ApiData
 
     self.stock_symbols.each { |symbol|
       resp = self.stock(symbol)
-      stock_lists << resp.quote
+      stock_lists << resp.quote.output
     }
 
     stock_lists
