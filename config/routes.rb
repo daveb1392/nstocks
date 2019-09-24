@@ -5,4 +5,8 @@ Rails.application.routes.draw do
   post '/login', to: 'auth#create' 
   get '/validate', to: 'auth#validate_token'
 
+  get '/stock_time', to: 'stocks#get_time_series'
+
+
+
 end

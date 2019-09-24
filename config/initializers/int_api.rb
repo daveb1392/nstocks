@@ -10,10 +10,10 @@ class ApiData
 #Setup authorization
 
 
-# test = IEX::Api::Client.new(
-#   publishable_token: "sk_d2b867d11ece40cc8010574e774074f0",
-#   endpoint: "https://cloud.iexapis.com/v1"
-# )
+test = IEX::Api::Client.new(
+  publishable_token: "sk_d2b867d11ece40cc8010574e774074f0",
+  endpoint: "https://cloud.iexapis.com/v1"
+)
  
 
   def self.stock(stock_symbol)    
@@ -24,7 +24,7 @@ class ApiData
 
 
   def self.stock_symbols
-    ["AAPL", "MSFT", "SPY", "DAX", "UBER"]
+    ["AAPL", "MSFT", "SPY", "DAX"]
   end
 
   def self.get_list
@@ -37,6 +37,35 @@ class ApiData
 
     stock_lists
   end
+
+
+  def self.get_time_daily
+    time = []
+
+    self.stock_symbols.each { |symbol|
+      resp = self.stock(symbol)
+      time << resp.timeseries.output
+    }
+
+    time
+  end
+
+
+def self.get_time_daily
+  time = []
+
+  self.stock_symbols.each { |symbol|
+    resp = self.stock(symbol)
+    time << resp.timeseries.output
+  }
+
+  time
+end
+
+
+
+
+
 
 end
 
