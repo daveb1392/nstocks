@@ -51,17 +51,7 @@ test = IEX::Api::Client.new(
   end
 
 
-def self.get_time_daily
-  time = []
-
-  self.stock_symbols.each { |symbol|
-    resp = self.stock(symbol)
-    time << resp.timeseries.output
-  }
-
-  time
-end
-
+# 
 
 
 
