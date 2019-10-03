@@ -15,6 +15,7 @@ test = IEX::Api::Client.new(
   endpoint: "https://cloud.iexapis.com/v1"
 )
  
+  new_stock = ["SBUX", "AAL", "FB", "TSLA", "NDAQ", "AMZN", "BABA", "TWTR", "DJI", "NFLX"]
 
   def self.stock(stock_symbol)    
     client = Alphavantage::Client.new key: "V888PZNUNWFPPYH7"
@@ -24,7 +25,7 @@ test = IEX::Api::Client.new(
 
 
   def self.stock_symbols
-    ["AAPL", "MSFT", "SPY", "DAX"]
+    ["AAPL", "MSFT", "INX", "GOOGL"]
   end
 
   def self.get_list
