@@ -15,16 +15,17 @@ test = IEX::Api::Client.new(
   endpoint: "https://cloud.iexapis.com/v1"
 )
  
+  # new_stock = ["SBUX", "AAL", "FB", "TSLA", "NDAQ", "AMZN", "BABA", "TWTR", "DJI", "NFLX"]
 
   def self.stock(stock_symbol)    
-    client = Alphavantage::Client.new key: "V888PZNUNWFPPYH7"
+    client = Alphavantage::Client.new key: "JX1IQ4YRJ08F9F68"
     client.verbose = true
     client.stock(symbol: stock_symbol)
   end
 
 
   def self.stock_symbols
-    ["AAPL", "MSFT", "SPY", "DAX"]
+    ["AAPL", "MSFT", "INX", "GOOGL", "SBUX", "AAL", "FB", "TSLA", "NDAQ", "AMZN", "BABA", "TWTR", "DJI", "NFLX", "KO", "BAC", "NKE", "JNJ", "WMT", "FDX"]
   end
 
   def self.get_list
@@ -51,17 +52,7 @@ test = IEX::Api::Client.new(
   end
 
 
-def self.get_time_daily
-  time = []
-
-  self.stock_symbols.each { |symbol|
-    resp = self.stock(symbol)
-    time << resp.timeseries.output
-  }
-
-  time
-end
-
+# 
 
 
 
